@@ -31,11 +31,8 @@ angular.module('myApp.home', ['ngRoute', 'ui.bootstrap', 'myApp.yearpicker-direc
     };
 
     SearchService.doSearch(params).then(function (data) {
-      console.log(processResponseForChart(data))
       $scope.chartData = processResponseForChart(data);
     });
-    // console.log(data);
-    // console.log(data.hitCount);
   };
 
   function processResponseForChart(data) {

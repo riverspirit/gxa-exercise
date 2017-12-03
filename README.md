@@ -4,9 +4,8 @@ See the number of publications that match the given query in Europe PMC for a gi
 
 ## Prerequisites
 
-- Node.js
-- Yarn
-- Bower
+- [Node.js](https://nodejs.org/en/)
+- [Yarn](https://yarnpkg.com/en/)
 
 ## Development
 
@@ -18,6 +17,11 @@ cd gxa-exercise
 yarn start
 ```
 
+To lint the code using JSHint before committing:
+
+```
+yarn run lint
+```
 
 ## Testing
 To be added
@@ -28,4 +32,4 @@ To be aded
 ## To Do
 - Build process
 - Tests
-- ESLint
+- ESLint/Airbnb styleguide

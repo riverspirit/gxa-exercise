@@ -19,6 +19,10 @@
     "postinstall": "bower install",
     "postupdate-deps": "bower update",
     "prestart": "yarn",
-    "start": "http-server -a localhost -p 8000 -c-1 ./app"
+    "start": "http-server -a localhost -p 8000 -c-1 ./app",
+    "lint": "jshint app/"
+  },
+  "dependencies": {
+    "jshint": "^2.9.5"
   }
 }
