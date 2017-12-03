@@ -1,0 +1,14 @@
+{
+  "name": "gxa-exercise",
+  "description": "GXA Exercise",
+  "version": "0.0.1",
+  "homepage": "https://github.com/riverspirit/gxa-exercise",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.6.7",
+    "angular-route": "~1.5.0",
+    "angular-mocks": "~1.5.0",
+    "highcharts": "^6.0.3",
+    "angular-bootstrap": "^2.5.0"
+  }
+}

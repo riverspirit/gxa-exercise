@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="col-md-4">
+        <form class="form-search" ng-submit="search()">
+                <h2 class="form-search-heading">Search publications</h2>
+                <label for="query" class="sr-only">Keywords</label>
+                <input type="text" id="query" class="form-control" placeholder="Keywords" required autofocus ng-model="query">
+            
+                <yearpicker class="col-md-5 year-picker pull-left" year="yearFrom" placeholder-text="From"></yearpicker>
+                <yearpicker class="col-md-5 year-picker pull-right" year="yearTo" placeholder-text="To"></yearpicker>
+            
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Search</button>
+        </form>
+    </div>
+
+    <div class="col-md-8 chart-container">
+        <highcharts-bar ng-if="chartData" data="chartData"></highcharts-bar>
+    </div>
+</div>
