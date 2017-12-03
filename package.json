@@ -12,6 +12,9 @@
     "grunt-contrib-cssmin": "~0.7.0",
     "grunt-contrib-uglify": "^3.2.1",
     "grunt-usemin": "~2.0.2",
+    "grunt-rev": "^0.1.0",
+    "grunt": "^1.0.1",
+    "jshint": "^2.9.5",
     "http-server": "^0.9.0",
     "jasmine-core": "^2.4.1",
     "karma": "^0.13.22",
@@ -28,10 +31,5 @@
     "start": "http-server -a localhost -p 8000 -c-1 ./app",
     "lint": "jshint app/",
     "build": "grunt"
-  },
-  "dependencies": {
-    "grunt": "^1.0.1",
-    "grunt-rev": "^0.1.0",
-    "jshint": "^2.9.5"
   }
 }

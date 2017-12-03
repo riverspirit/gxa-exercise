@@ -10,17 +10,20 @@ angular.module('myApp.home', ['ngRoute', 'ui.bootstrap', 'myApp.yearpicker-direc
 }])
 
 .controller('homeCtrl', ['$scope', 'SearchService', function($scope, SearchService) {
-  // $scope.chartData = {years: [], data: []};
   $scope.search = function () {
     var yearFrom = $scope.yearFrom && $scope.yearFrom.getFullYear() || null;
     var yearTo = $scope.yearTo && $scope.yearTo.getFullYear() || null;
 
     if (!yearFrom && !yearTo) {
+      // If year range is't specified, assume range as the last 10 years
       yearTo = (new Date()).getFullYear();
       yearFrom = yearTo - 10;
     } else if (yearFrom && !yearTo) {
+      // If only 'from year' is specified, assume range from
+      // the given 'from year' to the current year.
       yearTo = (new Date()).getFullYear();
     } else if (!yearFrom && yearTo) {
+      // If only 'to year' is specified, assume the last 10 years from the given 'to year'
       yearFrom = yearTo - 10;
     }
 
@@ -35,11 +38,19 @@ angular.module('myApp.home', ['ngRoute', 'ui.bootstrap', 'myApp.yearpicker-direc
     });
   };
 
+  /**
+   * Process the service response and construct in the format required for
+   * Highcharts.
+   *
+   * @param {Object} data - service response
+   */
   function processResponseForChart(data) {
     var years = [];
     var processedData = [];
 
     for (var year in data) {
+      // Show an year in the graph only if these is at least one matching publication
+      // in that year
       if (data[year] && data[year].data && data[year].data.hitCount > 0) {
         years.push(year);
 
@@ -65,6 +76,12 @@ angular.module('myApp.home', ['ngRoute', 'ui.bootstrap', 'myApp.yearpicker-direc
     };
   }
 
+  /**
+   * Sort function to sort the publications search results in the incrementing order of year
+   *
+   * @param {Object} a
+   * @param {Object} b
+   */
   function pubDataSortFunction(a, b) {
     if (a.year < b.year) {
       return -1;
@@ -73,40 +90,5 @@ angular.module('myApp.home', ['ngRoute', 'ui.bootstrap', 'myApp.yearpicker-direc
     }
     return 0;
   }
-
-  // $scope.chartData = {
-  //   years: [ '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008' ],
-  //   data: [
-  //     {
-  //      y: 29.9,
-  //      mostCited: 'Book title',
-  //      numCitations: 100
-  //     },{
-  //       y: 71.5,
-  //       mostCited: 'Book title',
-  //       numCitations: 100
-  //      },{
-  //       y: 106.4,
-  //       mostCited: 'Book title',
-  //       numCitations: 100
-  //      },{
-  //       y: 129.2,
-  //       mostCited: 'Book title',
-  //       numCitations: 100
-  //      },{
-  //       y: 144.0,
-  //       mostCited: 'Book title',
-  //       numCitations: 100
-  //      },{
-  //       y: 176.0,
-  //       mostCited: 'Book title',
-  //       numCitations: 100
-  //      },{
-  //       y: 135.6,
-  //       mostCited: 'Book title',
-  //       numCitations: 100
-  //      }
-  //   ]
-  // };
 
 }]);

@@ -1,5 +1,11 @@
 'use strict';
 
+/**
+ * Yearpicker directive
+ * 
+ * @example
+ * <yearpicker placeholderText="From" year="yearModel"></yearpicker>
+ */
 angular.module('myApp.yearpicker-directive', [])
 
 .controller('yearpickerCtrl', ['$scope', function ($scope) {
@@ -9,7 +15,6 @@ angular.module('myApp.yearpicker-directive', [])
     datepickerMode: 'year',
     minMode: 'year'
   };
-  // $scope.placeholderText = 'eeeee'
 
   $scope.toggleDisplay = function () {
     $scope.isOpen = !$scope.isOpen;

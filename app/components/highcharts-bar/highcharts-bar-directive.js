@@ -1,5 +1,12 @@
 'use strict';
 
+/**
+ * Highcharts directive for bar (column) chart
+ *
+ * @example
+ * <highcharts-bar data="chartData"></highcharts-bar>
+ */
+
 angular.module('myApp.highchartsBar-directive', [])
 
   .controller('highchartsBarCtrl', ['$scope', function ($scope) {
@@ -57,8 +64,10 @@ angular.module('myApp.highchartsBar-directive', [])
         scope.$watch('data', function (newData, oldData) {
           if (newData && newData.years && newData.data) {
             if (!scope.chart) {
+              // If a chart hasn't be created yet, create one
               scope.chart = Highcharts.chart(element[0], scope.chartOptions);
             } else {
+              // If a chart is already rendered, just update it with the new values
               scope.chart.xAxis[0].setCategories(newData.years, false);
               scope.chart.series[0].setData(newData.data, false);
               scope.chart.redraw();
