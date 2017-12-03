@@ -1,4 +1,4 @@
-# `gxa-exercise` — search for pubclications in Europe PMC
+# `gxa-exercise`
 
 See the number of publications that match the given query in Europe PMC for a given year range. If year range is not provided, data for the last 10 years is fetched.
 
