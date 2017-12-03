@@ -3,9 +3,11 @@
 See the number of publications that match the given query in Europe PMC for a given year range. If year range is not provided, data for the last 10 years is fetched.
 
 ## Prerequisites
+The following dependencies need to be downloaded and installed.
 
 - [Node.js](https://nodejs.org/en/)
 - [Yarn](https://yarnpkg.com/en/)
+- [Grunt](https://gruntjs.com/getting-started)
 
 ## Development
 
