@@ -43,6 +43,9 @@ git add dist && git commit -m "Create new dist"
 git subtree push --prefix dist origin gh-pages
 ```
 
+## Demo
+A demo hosted using Github Pages is available at [riverspirit.github.io/gxa-exercise](https://riverspirit.github.io/gxa-exercise/)
+
 ## To Do
 - Tests
 - ESLint/Airbnb styleguide
