@@ -1,0 +1,25 @@
+/* app css stylesheet */
+
+body {
+  padding-top: 50px;
+}
+
+.form-search {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-search .form-search-heading {
+  margin-bottom: 10px;
+}
+
+.year-picker {
+  margin-top: 10px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.chart-container {
+  padding-top: 40px;
+  height: 500px;
+}
