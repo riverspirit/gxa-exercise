@@ -26,10 +26,23 @@ yarn run lint
 ## Testing
 To be added
 
-## Running in Production
-To be aded
+## Deployment
+Run the build command to create a build. Once the script finishes, a build will be created in a `dist` directory.
+```
+yarn run build
+```
+
+The `dist` directory is excluded from `.gitignore` so that it can be committed and deployed in Github Pages. To deploy to Github Pages, do this:
+
+```
+ # Create build
+yarn run build
+
+# Commit the dist folder and push it to gh-pages
+git add dist && git commit -m "Create new dist"
+git subtree push --prefix dist origin gh-pages
+```
 
 ## To Do
-- Build process
 - Tests
 - ESLint/Airbnb styleguide
