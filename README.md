@@ -14,7 +14,7 @@ The following dependencies need to be downloaded and installed.
 To run the project, do this:
 
 ```
-git https://github.com/riverspirit/gxa-exercise.git
+git clone https://github.com/riverspirit/gxa-exercise.git
 cd gxa-exercise
 yarn start
 ```
